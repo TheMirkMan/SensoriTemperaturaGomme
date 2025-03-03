@@ -24,16 +24,33 @@ static void MX_GPIO_Init(void);
 
 int main(void)
 {
+  /*
+   	1) segnare la variabile vettore dove mettere i valori della temperatura gomme
+    2) salvare delle variabili di indirizzo?
+   */
+
 
   HAL_Init();
+  /*
+ 	 1) salvarsi l'indirizzo del can?
+ 	 2) salvarsi l'indirizzo dei sensori di temperatura dove prendere in inut?
 
+  */
   SystemClock_Config();
 
    MX_GPIO_Init();
+
+
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+	  /*
+	   1) leggere temperatura gomme
+	   2) scartare dal pacchetto finale le zone dove non ricava segnali utili
+	   3) farne la media
+	   4) assemblare il pacchetto (in loHI credo?)
+	   5) mandare
+	   */
   }
 
 }
