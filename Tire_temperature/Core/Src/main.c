@@ -32,7 +32,7 @@ int main(void)
 
   HAL_Init();
   /*
- 	 1) salvarsi l'indirizzo del can?
+ 	 1) salvarsi l'indirizzo del can? (o forse i2c?)
  	 2) salvarsi l'indirizzo dei sensori di temperatura dove prendere in inut?
 
   */
