@@ -62,9 +62,9 @@ int matrix[16][12]; //Matrice del sensore / telecamre di temperatura 16x12
 	   4) assemblare il pacchetto (in loHI credo?)
 	   5) mandare
 	   */
-  }
+  };
 
-}
+};
 
 void ReadSensor(){ // Usa la libreria di MLX per recuerare con I2C i dati dal sensore
 
@@ -72,7 +72,7 @@ void ReadSensor(){ // Usa la libreria di MLX per recuerare con I2C i dati dal se
 	static uint16_t mlx90621Frame[66];  // Vettore nel quale viene scritto i valori del sensore
 
 	int status;
-
+	prova;
 	status = MLX90621_GetFrameData (mlx90621Frame);
 
 	/*
@@ -80,18 +80,18 @@ void ReadSensor(){ // Usa la libreria di MLX per recuerare con I2C i dati dal se
 	 * 2) scartare dal pacchetto finale le zone dove non ricava segnali utili
 	 * 3) farne la media
 	 */
-}
+};
 
 void CalculateFinalValue(){
-}
+};
 
 void SendToCAN(uint8_t data){
 
-}
+};
 
 void GetFromCAN(){
 
-}
+};
 
 
 
