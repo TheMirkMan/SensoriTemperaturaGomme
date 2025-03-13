@@ -18,6 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "Lib/library1.h"
+#include "Lib/library2.h"
+#include <stdint.h>
+#include <stdio.h>
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -41,19 +45,55 @@ int main(void)
    MX_GPIO_Init();
 
 
+int matrix[16][12]; //Matrice del sensore / telecamre di temperatura 16x12
+
+
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  readSensor();
+
+	  CalculateFinalValue();
+
+	  sendToCan();
+
 	  /*
-	   1) leggere temperatura gomme
-	   2) scartare dal pacchetto finale le zone dove non ricava segnali utili
-	   3) farne la media
+
 	   4) assemblare il pacchetto (in loHI credo?)
 	   5) mandare
 	   */
   }
 
 }
+
+void ReadSensor(){ // Usa la libreria di MLX per recuerare con I2C i dati dal sensore
+
+
+	static uint16_t mlx90621Frame[66];  // Vettore nel quale viene scritto i valori del sensore
+
+	int status;
+
+	status = MLX90621_GetFrameData (mlx90621Frame);
+
+	/*
+	 * 1) leggere temperatura gomme
+	 * 2) scartare dal pacchetto finale le zone dove non ricava segnali utili
+	 * 3) farne la media
+	 */
+}
+
+void CalculateFinalValue(){
+}
+
+void SendToCAN(uint8_t data){
+
+}
+
+void GetFromCAN(){
+
+}
+
+
 
 void SystemClock_Config(void)
 {
